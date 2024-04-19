@@ -74,7 +74,7 @@ export function CardLinks() {
                     alt={link.name}
                     className={cn({
                       "w-5 h-5 rounded-none": true,
-                      "animate-bounce ease-out": id === selectedIndex,
+                      "animate-jump-jump": id === selectedIndex,
                     })}
                   />
                 )}
