@@ -7,7 +7,7 @@ import {
   faLinux,
   faChrome,
   faEdge,
-  faFirefox,
+  faFirefoxBrowser,
   faAppStore,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -106,7 +106,7 @@ export const ceobe_links: CeobeLink[] = [
     url: "https://addons.mozilla.org/zh-CN/firefox/addon/%E5%B0%8F%E5%88%BB%E9%A3%9F%E5%A0%82-%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E8%B9%B2%E9%A5%BC%E5%99%A8-arknights-cookies/",
     desc: "前往Firefox插件端商店下载小刻食堂",
     cover: {
-      icon: faFirefox,
+      icon: faFirefoxBrowser,
       color: "#ff7139",
     },
   },
