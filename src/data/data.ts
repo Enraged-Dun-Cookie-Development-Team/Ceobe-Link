@@ -112,7 +112,7 @@ export const ceobe_links: CeobeLink[] = [
   },
   {
     name: "通用浏览器插件端下载",
-    url: "https://www.ceobecanteen.top/",
+    url: "https://ceobe.lanzn.com/s/ceobe",
     desc: "小刻食堂通用浏览器插件(Zip压缩包)下载链接",
     cover: PluginZipIcon,
   },
