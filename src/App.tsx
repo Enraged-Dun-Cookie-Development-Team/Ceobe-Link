@@ -1,4 +1,4 @@
-import CeobeAvatar from "@/assets/ceobe.png";
+import OfficalSiteIcon from "@/assets/offical-site.gif";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { Toaster } from "@/components/ui/toaster";
@@ -14,7 +14,11 @@ function App() {
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
       <div className="z-40 h-full flex-1 flex-col space-y-4 p-8 flex min-w-96">
         <div className="flex items-center justify-between space-y-2">
-          <img src={CeobeAvatar} alt="Ceobe" className="w-12 h-12 rounded-sm" />
+          <img
+            src={OfficalSiteIcon}
+            alt="Ceobe"
+            className="w-12 h-12 rounded-sm"
+          />
           <div>
             <h2 className="text-2xl font-bold tracking-tight">小刻食堂直达</h2>
             <p className="text-muted-foreground">在这里前往食堂的各个地方</p>

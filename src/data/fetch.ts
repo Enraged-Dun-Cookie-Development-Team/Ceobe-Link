@@ -1,21 +1,22 @@
-import DemoData from "./demo.json";
+import { ceobe_links } from "./data";
 import { CeobeLinkResponse } from "./types";
 
-const FAKE = true;
+const USE_LOCAL = true;
 
 export async function fetchCeobeLinkData() {
-  if (FAKE) {
+  if (USE_LOCAL) {
     console.log("Using fake data");
     const demo: CeobeLinkResponse = {
       code: 0,
       msg: "ok",
-      data: DemoData,
+      data: ceobe_links,
     };
     console.log(demo);
     return demo;
   }
   const resp: CeobeLinkResponse = await (
     await fetch("https://cdn.ceobecanteen.top/link/data")
-  ).json();
+  ) //不存在的API
+    .json();
   return resp;
 }

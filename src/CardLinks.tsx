@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,10 +13,13 @@ import {
 import { ToastAction } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
 import { fetchCeobeLinkData } from "@/data/fetch";
-import type { CeobeLink } from "@/data/types";
+import type { CeobeLink, CeobeFontIcon } from "@/data/types";
+
+import { cn } from "./lib/utils";
 
 export function CardLinks() {
   const [links, setLinks] = useState<CeobeLink[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const { toast } = useToast();
 
   const refreshPage = () => {
@@ -42,18 +47,42 @@ export function CardLinks() {
     getLinks();
   }, [toast]);
 
+  const isPic = (cover: string | CeobeFontIcon | null): cover is string => {
+    return typeof cover === "string";
+  };
+  const isFontIcon = (
+    cover: string | CeobeFontIcon | null
+  ): cover is CeobeFontIcon => {
+    return cover !== null && !isPic(cover);
+  };
+
   return (
     <>
       {links.map((link, id) => (
-        <Card key={id} className=" hover:bg-muted">
+        <Card
+          key={id}
+          className="hover:bg-muted"
+          onMouseEnter={() => setSelectedIndex(id)}
+          onMouseLeave={() => setSelectedIndex(null)}
+        >
           <CardHeader>
             <div className="flex justify-between items-center space-x-2">
               <div className="flex items-center space-x-2">
-                {link.cover && (
+                {isPic(link.cover) && (
                   <img
                     src={link.cover}
                     alt={link.name}
-                    className="w-6 h-6 rounded-sm"
+                    className={cn({
+                      "w-5 h-5 rounded-none": true,
+                      "animate-bounce ease-in-out": id === selectedIndex,
+                    })}
+                  />
+                )}
+                {isFontIcon(link.cover) && (
+                  <FontAwesomeIcon
+                    icon={link.cover.icon}
+                    color={link.cover.color}
+                    bounce={id === selectedIndex}
                   />
                 )}
                 <CardTitle>{link.name}</CardTitle>

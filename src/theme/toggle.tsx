@@ -29,7 +29,7 @@ export function ThemeToggle() {
           暗黑
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          跟随系统
+          系统
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
