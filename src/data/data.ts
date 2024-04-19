@@ -89,7 +89,7 @@ export const ceobe_links: CeobeLink[] = [
     desc: "前往Chrome插件商店下载小刻食堂",
     cover: {
       icon: faChrome,
-      color: "#e87911",
+      color: "#ffb83d",
     },
   },
   {
