@@ -87,11 +87,11 @@ export function CardLinks() {
                 )}
                 <CardTitle>{link.name}</CardTitle>
               </div>
-              <Button size="sm" className="ml-auto">
-                <a href={link.url} target="_blank" rel="noreferrer">
+              <a href={link.url} target="_blank" rel="noreferrer">
+                <Button size="sm" className="ml-auto">
                   前往
-                </a>
-              </Button>
+                </Button>
+              </a>
             </div>
           </CardHeader>
           <CardContent>
